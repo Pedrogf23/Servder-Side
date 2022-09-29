@@ -10,13 +10,17 @@
     <?php
     const FILAS = 6;
     const COLUMNAS = 9;
+    for($i = 0; $i < FILAS; $i++){
+        for($j = 0; $j < COLUMNAS; $j++){
+            $num[$i][$j] = rand(100, 999);
+        }
+    }
+
     echo "<table border=1>";
     for($i = 0; $i < FILAS; $i++){
         echo "<tr>";
         for($j = 0; $j < COLUMNAS; $j++){
-            $num[$i][$j] = rand(100, 999);
-            
-            echo "<td>".$num[$i][$j]."</td>";
+            echo "<td>". $num[$i][$j] ."</td>";
         }
         echo "</tr>";
     }
