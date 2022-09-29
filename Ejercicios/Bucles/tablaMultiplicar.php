@@ -8,6 +8,7 @@
     <style>
         table{
             border-collapse: collapse;
+            margin: auto;
         }
         td{
             border: 2px lightgray solid;
