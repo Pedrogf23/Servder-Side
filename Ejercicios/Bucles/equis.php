@@ -17,7 +17,7 @@
             for($j = 0; $j < $columnas; $j++){
                 echo "<td>";   
                 if($i == $j || $j == $columnas-$i-1){
-                    echo $i," - ", $j;
+                    echo $i+1," - ", $j+1;
                 } 
                 echo "</td>";
             }
