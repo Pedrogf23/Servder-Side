@@ -31,31 +31,31 @@
             //Comprueba el más alto y el más bajo
             $masAlto = $personas[0]['Altura'];
             $masBajo = $personas[0]['Altura'];
-            foreach($personas as $gente){
-                if($gente['Altura'] > $masAlto){
-                    $masAlto = $gente['Altura'];
-                } else if ($gente['Altura'] < $masBajo){
-                    $masBajo = $gente['Altura'];
+            foreach($personas as $individuo){
+                if($individuo['Altura'] > $masAlto){
+                    $masAlto = $individuo['Altura'];
+                } else if ($individuo['Altura'] < $masBajo){
+                    $masBajo = $individuo['Altura'];
                 }
             }
 
             //Crea la tabla.
             echo "<table border=1>";
             echo "<tr><th>Nombre</th><th>Altura</th><th>Email</th></tr>";
-            foreach($personas as $gente){
+            foreach($personas as $individuo){
 
                 //Si la altura es del mas bajo o del mas alto
                 //le pone id a la fila.
-                if($gente['Altura'] == $masAlto){
+                if($individuo['Altura'] == $masAlto){
                     echo "<tr id='alto'>";
-                } else if ($gente['Altura'] == $masBajo){
+                } else if ($individuo['Altura'] == $masBajo){
                     echo "<tr id='bajo'>";
                 } else {
                     echo "<tr>";
                 }
 
-                foreach($gente as $persona => $info){
-                    echo "<td>$info</td>";
+                foreach($individuo as $info => $contenido){
+                    echo "<td>$contenido</td>";
                 }
 
                 echo "</tr>";
