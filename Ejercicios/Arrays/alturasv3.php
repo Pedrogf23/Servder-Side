@@ -54,8 +54,8 @@
                     echo "<tr>";
                 }
 
-                foreach($individuo as $info => $contenido){
-                    echo "<td>$contenido</td>";
+                foreach($individuo as $dato => $info){
+                    echo "<td>$info</td>";
                 }
 
                 echo "</tr>";
