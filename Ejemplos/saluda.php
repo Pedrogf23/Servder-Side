@@ -10,7 +10,7 @@
     <?php
     if(!isset($_GET['nombre']) && !isset($_GET['apellido1'])){
         ?>
-        <form action="saluda.php" method="get">
+        s<form action="saluda.php" method="get">
             <p><label for="nombre">Nombre: </label>
             <input type="text" name="nombre" id="nombre"></p>
             <p><label for="apellido1">Primer apellido:</label> 
