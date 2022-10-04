@@ -22,6 +22,8 @@
 
     $mayor = $num[0];
     $menor = $num[0];
+    $columnaMayor = 0;
+    $filaMenor = 0;
     $k = 0;
     for($i = 0; $i < FILAS; $i++){
         for($j = 0; $j < COLUMNAS; $j++){
@@ -48,7 +50,7 @@
             } else if($i == $filaMenor){
                 echo "<td style='background-color: blue;'>". $numBi[$i][$j] ."</td>";
             } else {
-                echo "<td style='background-color: black; color: white;'>". $numBi[$i][$j] ."</td>";
+                echo "<td>". $numBi[$i][$j] ."</td>";
             }
         }
         echo "</tr>";
