@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        function arrayAleatorio(int $tam, int $min, int $max, &$array) {
+        function arrayAleatorio(int $tam, int $min, int $max) {
             for($i = 0; $i < $tam; $i++){
                 $array[$i] = rand($min, $max);
             }
@@ -26,15 +26,11 @@
     </form>
     <?php
     if(isset($_POST['enviar'])){
-        $tam = $_POST['tam'];
-        $max = $_POST['max'];
-        $min = $_POST['min'];
-        $array = array();
 
-        arrayAleatorio($tam, $min, $max, $array);
+        $array = arrayAleatorio($_POST['tam'], $_POST['min'], $_POST['max']);
 
-        foreach($array as $dato){
-            echo $dato." ";
+        foreach($array as $num){
+            echo $num." ";
         }
 
         echo "<br>";
