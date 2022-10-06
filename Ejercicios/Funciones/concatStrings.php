@@ -9,13 +9,13 @@
 <body>
     <?php
 
-    function concatStr(){
-        if(func_num_args() == 0){
+    function concatStr(...$string): string{
+        if(count($string) == 0){
             return false;
         } else {
             $concat = "";
-            for($i = 0; $i < func_num_args(); $i++){
-                    $concat = $concat."".func_get_arg($i);
+            foreach($string as $palabra){
+                $concat = $concat."".$palabra;
             }
             return $concat;
         }
