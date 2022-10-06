@@ -9,14 +9,14 @@
 <body>
     <?php
 
-    function mayor(): int{
-        if(func_num_args() == 0){
+    function mayor(...$numeros): int{
+        if(count($numeros) == 0){
             return false;
         } else {
-            $mayor = func_get_arg(0);
-            for($i = 0; $i < func_num_args(); $i++){
-                if(func_get_arg($i) > $mayor) {
-                    $mayor = func_get_arg($i);
+            $mayor = $numeros[0];
+            foreach($numeros as $num){
+                if($num > $mayor) {
+                    $mayor = $num;
                 }
             }
             return $mayor;
