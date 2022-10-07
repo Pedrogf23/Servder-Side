@@ -9,12 +9,12 @@
 <body>
     <?php
 
-    function concatStr(...$string): string{
-        if(count($string) == 0){
+    function concatStr(...$strings): string{
+        if(count($strings) == 0){
             return false;
         } else {
             $concat = "";
-            foreach($string as $palabra){
+            foreach($strings as $palabra){
                 $concat = $concat."".$palabra;
             }
             return $concat;
