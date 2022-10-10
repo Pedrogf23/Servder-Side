@@ -2,39 +2,52 @@
 
 declare(strict_types = 1);
 
-function sumar(int $num1, int $num2): int {
+function sumar(...$nums): int {
 
-    return intval($num1 + $num2);
+    $suma = 0;
 
-}
-
-function multiplicar(int $num1, int $num2): int {
-
-    return intval($num1 * $num2);
-
-}
-
-function restar(int $num1, int $num2): int {
-
-    if($num1 >= $num2){
-        return intval($num1 - $num2);
-    } else {
-        return intval($num2 - $num1);
+    for($i = 0; $i < count($nums); $i++){
+        $suma += $nums[$i];
     }
 
+    return $suma;
+
 }
 
-function dividir(int $num1, int $num2): int {
+function multiplicar(...$nums): int {
 
-    if($num1 >= $num2){
-        return intval($num1 / $num2);
-    } else {
-        return intval($num2 / $num1);
+    $multiplicacion = $nums[0];
+
+    for($i = 1; $i < count($nums); $i++){
+        $multiplicacion *= $nums[$i];
     }
 
+    return $multiplicacion;
+
 }
 
-$num1 = 10;
-$num2 = 15;
+function restar(...$nums): int {
+
+    $resta = $nums[0];
+
+    for($i = 1; $i < count($nums); $i++){
+        $resta -= $nums[$i];
+    }
+
+    return $resta;
+
+}
+
+function dividir(...$nums): int {
+
+    $division = $nums[0];
+
+    for($i = 1; $i < count($nums); $i++){
+        $division /= $nums[$i];
+    }
+
+    return $division;
+
+}
 
 ?>

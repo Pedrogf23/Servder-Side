@@ -8,25 +8,21 @@
 </head>
 <?php
 include_once('biblioteca.php');
-$arrayFunciones = ['sumar', 'restar', 'multiplicar', 'dividir'];
 ?>
 <body>
-    <?php
-    if(isset($_POST['enviar'])){
-        for($i = 0; $i < count($arrayFunciones); $i++){
-            echo $arrayFunciones[$i]." ".$_POST['num1']." y ".$_POST['num2']." = "; 
-            echo $arrayFunciones[$i]($_POST['num1'], $_POST['num2'])." ";
-            echo "<br/>";
-        }
-    } else {
-    ?>
     <form action="#" method="post">
-        <p>Introduce dos números.</p>
+        <input type="radio" name="operacion" value="sumar">Sumar <br>
+        <input type="radio" name="operacion" value="restar">Restar <br>
+        <input type="radio" name="operacion" value="multiplicar">Multiplicar <br>
+        <input type="radio" name="operacion" value="dividir">Dividir <br>
+        Introduce dos números: <br>
         <input type="number" name="num1"><br>
         <input type="number" name="num2"><br>
         <input type="submit" name="enviar" value="Enviar">
     </form>
     <?php
+    if(isset($_POST['enviar'])){
+        echo "Resultado = ".$_POST['operacion']($_POST['num1'], $_POST['num2']);
     }
     ?>
 </body>
