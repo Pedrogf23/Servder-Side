@@ -15,7 +15,7 @@
         } else {
             $concat = "";
             foreach($strings as $palabra){
-                $concat = $concat."".$palabra;
+                $concat = $concat."  ".$palabra;
             }
             return $concat;
         }
