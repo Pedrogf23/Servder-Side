@@ -32,9 +32,7 @@ function digitoN(int $num, int $pos): int {
 
     $volteado = voltear($num);
 
-    for($i = 0; $i < $pos; $i++){
-        $volteado = $volteado / 10;
-    }
+    $volteado = quitaPorDetras($volteado, $pos);
 
     return $volteado % 10;
 
