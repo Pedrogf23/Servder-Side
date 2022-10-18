@@ -18,7 +18,6 @@
             // Devuelve false.
             return false;
         } else {
-
             // Bucle que recorre el array desde el primer valor hasta el penúltimo.
             for($i = 0; $i < count($nums)-1; $i++){
                 // Bucle que vuelve a recorrer el array desde el siguiente a $i hasta el último.
@@ -32,9 +31,7 @@
                     }
                 }
             }
-
             return $nums;
-
         }
     }
 
