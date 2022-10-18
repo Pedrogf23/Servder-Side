@@ -19,9 +19,9 @@
         if(isset($_POST['enviar'])){
             //Se guardan los valores introducidos en el formulario en un array bidimensional.
             for($i = 0; $i < $cantidad; $i++){
-                $vehiculos[$i][0] = $_POST['mat'.$i];
-                $vehiculos[$i][1] = $_POST['mar'.$i];
-                $vehiculos[$i][2] = $_POST['mod'.$i];
+                $vehiculos[$i]['matricula'] = $_POST['mat'.$i];
+                $vehiculos[$i]['marca'] = $_POST['mar'.$i];
+                $vehiculos[$i]['modelo'] = $_POST['mod'.$i];
             }
             // Mediante una tabla, se muestran los valores del array bidimensional.
             echo "<table border=1 style='text-align: center;'>";
@@ -38,9 +38,9 @@
             for($i = 0; $i < $cantidad; $i++){
                 echo "<tr>";
                 echo "<td>Vehículo". $i+1 ."</td>";
-                echo "<td>". $vehiculos[$i][0] ."</td>";
-                echo "<td>". $vehiculos[$i][1] ."</td>";
-                echo "<td>". $vehiculos[$i][2] ."</td>";
+                echo "<td>". $vehiculos[$i]['matricula'] ."</td>";
+                echo "<td>". $vehiculos[$i]['marca'] ."</td>";
+                echo "<td>". $vehiculos[$i]['modelo'] ."</td>";
                 echo "</tr>";
             }
             echo "</table>";

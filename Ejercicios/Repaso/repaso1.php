@@ -28,10 +28,10 @@
       }
     }
 
-    // Si la cantidad está, entra al if; si no, va a la línea 53.
+    // Si la cantidad está, entra al if; si no, va a la línea 56.
     if(isset($_POST['cantidad'])){
       $cantidad = $_POST['cantidad'];
-      // Si la variable enviar está, entra el if; si no, va a la línea 39.
+      // Si la variable enviar está, entra el if; si no, va a la línea 42.
       if(isset($_POST['enviar'])){
         // Se guardan los números introducidos en un array.
         for($i = 0; $i < $cantidad; $i++){
