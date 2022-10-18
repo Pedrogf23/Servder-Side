@@ -44,6 +44,8 @@
         // Al final, los índices del array que contenían valores nulos,
         // han sido sustituidos por los valores siguientes al mismo
         // de forma que los espacios que se creaban han sido rellenados.
+
+        /* SOLO FUNCIONA CON 1 VALOR NULO EN EL ARRAY */
     }
 
     // Función que, dados n valores, devuelve un array con los
