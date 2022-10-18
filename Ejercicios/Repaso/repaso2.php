@@ -57,8 +57,8 @@
             echo "<td>Marca</td>";
             echo "<td>Modelo</td>";
             echo "</tr>";
-            // Bucle que se repite tantas veces como vehículos haya dicho el usuario que se van a introducir ($cantidad),
-            // con los inputs dónde se introduce la información de los vehículos.
+            // Bucle que se repite tantas veces como vehículos haya dicho el usuario que se van a introducir
+            // ($cantidad), con los inputs dónde se introduce la información de los vehículos.
             for($i = 0; $i < $cantidad; $i++){
                 echo "<tr>";
                 echo "<td>Vehículo". $i+1 ."</td>";
