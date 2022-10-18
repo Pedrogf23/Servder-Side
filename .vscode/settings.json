@@ -18,6 +18,8 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
 
+  "php.validate.executablePath": "C:/xampp/php/phpwin.exe",
+
   "html.suggest.html5": true,
   //HTML autoclosing and rename
   "auto-rename-tag.activationOnLanguage": [true, "*"],
