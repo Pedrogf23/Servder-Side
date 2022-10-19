@@ -14,7 +14,7 @@ for($i = 0; $i < 50; $i++){
     <ul>
         <?php
         for($i = 0; $i < 50; $i++){
-            echo "<li>", $nums[$i] ,"</li>";
+            echo "<li>", $nums[$i] ,"</li>"
         }
         ?>
     </ul>
