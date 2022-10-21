@@ -22,15 +22,14 @@ function arrayCapicua(array $array): bool{
     // Con la función invertir, se guarda el array invertido.
     $arrayInvertido = invertir($array);
 
+    $esCapicua = true;
     // Si el array original es igual que el array invertido.
-    if($array == $arrayInvertido){
-        // Devuelve true.
-        return true;
-    // Si no son iguales.
-    } else {
-        // Devuelve false.
-        return false;
+    for($i = 0; $i < count($array); $i++){
+        if($array[$i] != $arrayInvertido[$i]){
+            $esCapicua = false;
+        }
     }
+    return $esCapicua;
 
 }
 
