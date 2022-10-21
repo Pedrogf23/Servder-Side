@@ -2,14 +2,19 @@
 // Función que comprueba si un array con números es capicúa o no.
 function arrayCapicua(array $array): bool{
 
+
+    // Variable que almacena si es o no capicúa.
     $esCapicua = true;
     
+    // Se recorre la primera mitad el array comparándola con la otra mitad.
     for($i = 0; $i < ((count($array)) / 2); $i++){
+        // Si no coincide, no es capicúa.
         if($array[$i] != $array[(count($array)-1-$i)]){
             $esCapicua = false;
         }
     }
 
+    // Devuelve true o false dependiendo si es capicúa o no.
     return $esCapicua;
 
 }
