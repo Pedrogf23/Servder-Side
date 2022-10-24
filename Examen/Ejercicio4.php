@@ -4,7 +4,8 @@
 // sin repeticiones.
 function crearArrayAleatorio(int $filas, int $columnas, int $min, int $max){
 
-    // Si la cantidad que números comprendida entre el máximo y el mínimo (su suma uno para que el máximo también se incluya)
+    // Si la cantidad que números comprendida entre el máximo y el mínimo
+    // (su suma uno para que el máximo también se incluya)
     // es menor que el tamaño total del array, devuelve false.
     if($max-$min+1 < $filas*$columnas){
         return false;
