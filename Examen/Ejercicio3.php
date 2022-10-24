@@ -8,7 +8,7 @@
 </head>
 <?php
 // Función que ordena de menor a mayor edad los alumnos que se le pasan en un array bidimensional.
-function ordenarAlumnos(&$alumnos){
+function ordenarAlumnos(array &$alumnos){
 
     // Bucle que recorre el array desde el principio hasta el penúltimo alumno.
     // Compara el AnyoNac de cada alumno (menos el del último) con el del resto.
