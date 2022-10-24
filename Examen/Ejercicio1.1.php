@@ -7,7 +7,7 @@ function arrayCapicua(array $array): bool{
     $esCapicua = true;
     
     // Se recorre la primera mitad el array comparándola con la otra mitad.
-    for($i = 0; $i < ((count($array)) / 2); $i++){
+    for($i = 0; $i < ((count($array)-1) / 2); $i++){
         // Si no coincide, no es capicúa.
         if($array[$i] != $array[(count($array)-1-$i)]){
             $esCapicua = false;
@@ -20,7 +20,7 @@ function arrayCapicua(array $array): bool{
 }
 
 // Comprobación.
-$array = [1,2,3,4,5,4,3,2,1];
+$array = [1,2,3,4,5,5,4,3,2,1];
 
 foreach($array as $num){
     echo $num." ";
