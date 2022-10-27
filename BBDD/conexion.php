@@ -1,4 +1,5 @@
 <?php
+
 // Abrir la conexión.
 function conectar(){
     $host = "";
