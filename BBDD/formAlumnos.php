@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Grupos</title>
+    <title>Formulario de Alumno</title>
     <style>
         div{
             margin: auto;
@@ -18,7 +18,7 @@
     <form action="formAlumnos.php" method="post">
         <table>
             <tr>
-                <th colspan='3'>Insertar alumnos</th>
+                <th colspan='2'>Insertar alumnos</th>
             </tr>
             <tr>
                 <td>Identificador</td>
@@ -66,7 +66,7 @@
                 <td><input type="text" name="mail"></td>
             </tr>
             <tr>
-                <td colspan='3'><input type="submit" name="insertar" value="Guardar"></td>
+                <td colspan='2' style="text-align: center;"><input type="submit" name="insertar" value="Guardar"></td>
             </tr>
         </table>
     </form>
