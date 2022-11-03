@@ -2,13 +2,13 @@
 
 // Abrir la conexión.
 function conectar(){
-    $host = "";
-    $user = "";
+    $server = "localhost";
+    $user = "root";
     $pass = "";
-    $db_name = "";
+    $db_name = "murallasreales";
 
-    $mysqli = new mysqli($host, $user, $pass, $db_name);
-    if($mysqli->connect_errno()){
+    $mysqli = new mysqli($server, $user, $pass, $db_name);
+    if($mysqli->connect_errno){
         echo 'Fallo al conectar a MySQL: ('. $mysqli->connnect_errno() .')'. $mysqli->connect_error();
     }
     return $mysqli;
