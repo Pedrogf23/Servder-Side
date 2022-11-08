@@ -30,4 +30,13 @@ function insertarProfesor($conn, $idProfesor, $nombre, $apellido1, $apellido2, $
     }
 }
 
+function insertarTutor($conn, $idGrupo, $idProfesor): string{
+    $sql = "INSERT INTO tutoria (`idGrupo`, `idProfesor`) VALUES ('$idGrupo', '$idProfesor')";
+    if($conn->query($sql) === TRUE){
+        return 'Tutor insertado correctamente.';
+    } else {
+        return 'Error: '. $sql . '<br>' . $conn->error;
+    }
+}
+
 ?>
