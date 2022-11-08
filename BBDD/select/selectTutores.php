@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de todos los alumnos</title>
+    <title>Listado de todos los tutores</title>
     <?php
     include_once('../conexion.php');
     $conn = conectar();
@@ -13,7 +13,7 @@
 <body>
     <table border=1>
         <tr>
-            <th style="text-align: center;" colspan="2">Tutorías</th>
+            <th style="text-align: center;" colspan="3">Tutorías</th>
         </tr>
         <tr>
             <th>Profesor</th>
@@ -39,7 +39,7 @@
         ?>
     </table>
     <script>
-    function confirmDeleteT(grupo, profesor) {
+    function confirmDeleteT(profesor, grupo) {
         let confirmar = confirm('¿Seguro que quiere eliminar esa tutoría?');
         if (confirmar == true) {
             location.href = `../delete.php?profesor=${profesor}&grupo=${grupo}`;

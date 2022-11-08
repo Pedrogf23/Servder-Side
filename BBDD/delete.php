@@ -40,7 +40,7 @@ if(isset($_GET['id'])){
 
 } else if (isset($_GET['profesor']) && isset($_GET['grupo'])){
 
-    $sql = 'DELETE FROM tutoria WHERE idProfesor = '.$_GET['profesor'].' AND idGrupo = '.$_GET['grupo'];
+    $sql = 'DELETE FROM tutoria WHERE `tutoria`.`idGrupo` = '.$_GET['grupo'].' AND `tutoria`.`idProfesor` = '.$_GET['profesor'];
     if($conn->query($sql) === TRUE){
         header("Location: select/selectTutores.php");
     } else {

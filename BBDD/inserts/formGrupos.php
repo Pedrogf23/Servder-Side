@@ -35,14 +35,14 @@
             <tr>
                 <td colspan='2' style="text-align: center;"><input type="submit" name="insertar" value="Guardar"></td>
             </tr>
+            <?php
+            if(isset($_POST['insertar'])){
+                echo "<tr><td colspan='2'>".insertarGrupo($conn, $_POST['idGrupo'], $_POST['nombre'], $_POST['curso'])."</td></tr>";
+            }
+            cerrarConexion($conn);
+            ?>
         </table>
     </form>
     </div>
-    <?php
-    if(isset($_POST['insertar'])){
-        echo insertarGrupo($conn, $_POST['idGrupo'], $_POST['nombre'], $_POST['curso']);
-    }
-    cerrarConexion($conn);
-    ?>
 </body>
 </html>

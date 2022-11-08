@@ -68,14 +68,14 @@
             <tr>
                 <td colspan='2' style="text-align: center;"><input type="submit" name="insertar" value="Guardar"></td>
             </tr>
+            <?php
+            if(isset($_POST['insertar'])){
+                echo "<tr><td colspan='2'>".insertarAlumno($conn, $_POST['idAlumno'], $_POST['idGrupo'], $_POST['nombre'], $_POST['apellido1'], $_POST['apellido2'], $_POST['expediente'], $_POST['telefono'], $_POST['mail'])."</td></tr>";
+            }
+            cerrarConexion($conn);
+            ?>
         </table>
     </form>
     </div>
-    <?php
-    if(isset($_POST['insertar'])){
-        echo insertarAlumno($conn, $_POST['idAlumno'], $_POST['idGrupo'], $_POST['nombre'], $_POST['apellido1'], $_POST['apellido2'], $_POST['expediente'], $_POST['telefono'], $_POST['mail']);
-    }
-    cerrarConexion($conn);
-    ?>
 </body>
 </html>

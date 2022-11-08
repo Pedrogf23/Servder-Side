@@ -57,14 +57,14 @@
             <tr>
                 <td colspan='2' style="text-align: center;"><input type="submit" name="insertar" value="Guardar"></td>
             </tr>
+            <?php
+            if(isset($_POST['insertar'])){
+                echo "<tr><td colspan='2'>".insertarTutor($conn, $_POST['idProfesor'], $_POST['idGrupo'])."</td></tr>";
+            }
+            cerrarConexion($conn);
+            ?>
         </table>
     </form>
     </div>
-    <?php
-    if(isset($_POST['insertar'])){
-        echo insertarTutor($conn, $_POST['idProfesor'], $_POST['idGrupo']);
-    }
-    cerrarConexion($conn);
-    ?>
 </body>
 </html>
