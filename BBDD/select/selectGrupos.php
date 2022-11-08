@@ -13,7 +13,7 @@
 <body>
     <table border=1>
         <tr>
-            <th style="text-align: center;" colspan="5">Grupos</th>
+            <th style="text-align: center;" colspan="6">Grupos</th>
         </tr>
         <tr>
             <td>Identificador</td>
@@ -45,11 +45,12 @@
                         <input type='submit' name='profesores' value='Consultar'>
                     </form>
                 </td>";
+                echo "<td><button onclick='confirmDelete(".$grupo['idGrupo'].")'>Eliminar</button></td>";
                 echo "</tr>";
             }
         } else {
             ?>
-            <tr><td colspan="5">No hay resultados</td></tr>
+            <tr><td colspan="6">No hay resultados</td></tr>
             <?php
         }
         ?>
@@ -141,6 +142,15 @@
     </table>
     <?php
     }
+    cerrarConexion($conn);
     ?>
+    <script>
+        function confirmDelete(id) {
+            let confirmar = confirm('¿Seguro que quiere eliminar ese grupo?');
+            if (confirmar == true) {
+                location.href = `../delete.php?id=${id}&tabla=grupo`;
+            }
+        }
+    </script>
 </body>
 </html>

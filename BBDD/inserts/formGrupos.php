@@ -42,6 +42,7 @@
     if(isset($_POST['insertar'])){
         echo insertarGrupo($conn, $_POST['idGrupo'], $_POST['nombre'], $_POST['curso']);
     }
+    cerrarConexion($conn);
     ?>
 </body>
 </html>

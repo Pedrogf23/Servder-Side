@@ -19,12 +19,11 @@
             <td>Identificador</td>
             <td>Nombre</td>
             <td>Apellidos</td>
-            <td>Grupo</td>
             <td>Telefono</td>
             <td>Mail</td>
         </tr>
         <?php
-        $sql = "SELECT * FROM profesor p JOIN tutoria t ON p.idProfesor = t.idProfesor JOIN grupo g ON t.idGrupo = g.idGrupo";
+        $sql = "SELECT * FROM profesor";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
             while($profesor = $result->fetch_assoc()){
@@ -32,9 +31,9 @@
                 echo "<td>".$profesor['idProfesor']."</td>";
                 echo "<td>".$profesor['nombreP']."</td>";
                 echo "<td>".$profesor['apellido1']." ".$profesor['apellido2']."</td>";
-                echo "<td>".$profesor['nombreG']."</td>";
                 echo "<td>".$profesor['telefono']."</td>";
                 echo "<td>".$profesor['mail']."</td>";
+                echo "<td><button onclick='confirmDelete(".$profesor['idProfesor'].")'>Eliminar</button></td>";
                 echo "</tr>";
             }
         } else {
@@ -42,9 +41,16 @@
             <tr><td colspan="6">No hay resultados</td></tr>
             <?php
         }
-
-        
+        cerrarConexion($conn);        
         ?>
     </table>
+    <script>
+    function confirmDelete(id) {
+        let confirmar = confirm('¿Seguro que quiere eliminar ese profesor?');
+        if (confirmar == true) {
+            location.href = `../delete.php?id=${id}&tabla=profesor`;
+        }
+        }
+    </script>
 </body>
 </html>

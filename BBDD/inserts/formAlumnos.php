@@ -75,6 +75,7 @@
     if(isset($_POST['insertar'])){
         echo insertarAlumno($conn, $_POST['idAlumno'], $_POST['idGrupo'], $_POST['nombre'], $_POST['apellido1'], $_POST['apellido2'], $_POST['expediente'], $_POST['telefono'], $_POST['mail']);
     }
+    cerrarConexion($conn);
     ?>
 </body>
 </html>

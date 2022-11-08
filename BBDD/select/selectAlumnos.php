@@ -13,7 +13,7 @@
 <body>
     <table border=1>
         <tr>
-            <th style="text-align: center;" colspan="7">Alumnos</th>
+            <th style="text-align: center;" colspan="8">Alumnos</th>
         </tr>
         <tr>
             <td>Identificador</td>
@@ -37,16 +37,24 @@
                 echo "<td>".$alumno['expediente']."</td>";
                 echo "<td>".$alumno['telefono']."</td>";
                 echo "<td>".$alumno['mail']."</td>";
+                echo "<td><button onclick='confirmDelete(".$alumno['idAlumno'].")'>Eliminar</button></td>";
                 echo "</tr>";
             }
         } else {
             ?>
-            <tr><td colspan="7">No hay resultados</td></tr>
+            <tr><td colspan="8">No hay resultados</td></tr>
             <?php
         }
-
-        
+        cerrarConexion($conn);
         ?>
     </table>
+    <script>
+    function confirmDelete(id) {
+        let confirmar = confirm('¿Seguro que quiere eliminar ese alumno?');
+        if (confirmar == true) {
+            location.href = `../delete.php?id=${id}&tabla=alumno`;
+        }
+        }
+    </script>
 </body>
 </html>
