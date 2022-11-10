@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de todos los alumnos</title>
+    <script src="../js/funciones.js"></script>
     <?php
-    include_once('../conexion.php');
+    require_once('../conexion.php');
     $conn = conectar();
     ?>
 </head>
 <body>
     <table border=1>
         <tr>
-            <th style="text-align: center;" colspan="8">Alumnos</th>
+            <th style="text-align: center;" colspan="9">Alumnos</th>
         </tr>
-        <tr>
+        <tr style="text-align: center;">
             <td>Identificador</td>
             <td>Grupo</td>
             <td>Nombre</td>
@@ -23,6 +24,8 @@
             <td>Expediente</td>
             <td>Telefono</td>
             <td>Mail</td>
+            <td>Editar</td>
+            <td>Eliminar</td>
         </tr>
         <?php
         $sql = "SELECT * FROM alumno a JOIN grupo g ON g.idGrupo = a.idGrupo";
@@ -37,7 +40,8 @@
                 echo "<td>".$alumno['expediente']."</td>";
                 echo "<td>".$alumno['telefono']."</td>";
                 echo "<td>".$alumno['mail']."</td>";
-                echo "<td><button onclick='confirmDelete(".$alumno['idAlumno'].")'>Eliminar</button></td>";
+                echo "<td><button onclick='update(".$alumno['idAlumno'].", `alumno`)'>Editar</button></td>";
+                echo "<td><button onclick='confirmDelete(".$alumno['idAlumno'].", `alumno`)'>Eliminar</button></td>";
                 echo "</tr>";
             }
         } else {
@@ -48,13 +52,5 @@
         cerrarConexion($conn);
         ?>
     </table>
-    <script>
-    function confirmDelete(id) {
-        let confirmar = confirm('¿Seguro que quiere eliminar ese alumno?');
-        if (confirmar == true) {
-            location.href = `../delete.php?id=${id}&tabla=alumno`;
-        }
-        }
-    </script>
 </body>
 </html>

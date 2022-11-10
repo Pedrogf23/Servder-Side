@@ -5,22 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de todos los grupos</title>
+    <script src="../js/funciones.js"></script>
     <?php
-    include_once('../conexion.php');
+    require_once('../conexion.php');
     $conn = conectar();
     ?>
 </head>
 <body>
     <table border=1>
         <tr>
-            <th style="text-align: center;" colspan="6">Grupos</th>
+            <th style="text-align: center;" colspan="7">Grupos</th>
         </tr>
-        <tr>
+        <tr style="text-align: center;">
             <td>Identificador</td>
             <td>Nombre</td>
             <td>Curso</td>
             <td>Alumnos</td>
             <td>Profesores</td>
+            <td>Editar</td>
+            <td>Eliminar</td>
         </tr>
         <?php
         $sql = "SELECT * FROM grupo";
@@ -45,7 +48,8 @@
                         <input type='submit' name='profesores' value='Consultar'>
                     </form>
                 </td>";
-                echo "<td><button onclick='confirmDelete(".$grupo['idGrupo'].")'>Eliminar</button></td>";
+                echo "<td><button onclick='update(".$grupo['idGrupo'].", `grupo`)'>Editar</button></td>";
+                echo "<td><button onclick='confirmDelete(".$grupo['idGrupo'].", `grupo`)'>Eliminar</button></td>";
                 echo "</tr>";
             }
         } else {
@@ -144,13 +148,5 @@
     }
     cerrarConexion($conn);
     ?>
-    <script>
-        function confirmDelete(id) {
-            let confirmar = confirm('¿Seguro que quiere eliminar ese grupo?');
-            if (confirmar == true) {
-                location.href = `../delete.php?id=${id}&tabla=grupo`;
-            }
-        }
-    </script>
 </body>
 </html>

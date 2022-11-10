@@ -15,9 +15,10 @@
         <tr>
             <th style="text-align: center;" colspan="3">Tutorías</th>
         </tr>
-        <tr>
-            <th>Profesor</th>
-            <th>Grupo</th>
+        <tr style="text-align: center;">
+            <td>Profesor</td>
+            <td>Grupo</td>
+            <td>Eliminar</td>
         </tr>
         <?php
         $sql = "SELECT * FROM profesor p JOIN tutoria t ON p.idProfesor = t.idProfesor JOIN grupo g ON t.idGrupo = g.idGrupo";

@@ -5,18 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Grupos</title>
-    <style>
-        div{
-            margin: auto;
-            width: 17.3%;
-        }
-    </style>
     <?php include_once('insert.php'); ?>
 </head>
 <body>
     <div>
     <form action="formGrupos.php" method="post">
-        <table>
+        <table border=1>
             <tr>
                 <th colspan='2'>Insertar grupos</th>
             </tr>
