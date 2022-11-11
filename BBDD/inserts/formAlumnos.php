@@ -26,14 +26,14 @@
             <select name="idGrupo">
               <option value="" selected disabled hidden>-- Selecciona un grupo --</option>
               <?php
-                            $sql = "SELECT * FROM grupo";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                                while ($grupo = $result->fetch_assoc()) {
-                                    echo "<option value='" . $grupo['idGrupo'] . "'>" . $grupo['nombreG'] . "</option>";
-                                }
-                            }
-                            ?>
+                $sql = "SELECT * FROM grupo";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                  while ($grupo = $result->fetch_assoc()) {
+                    echo "<option value='" . $grupo['idGrupo'] . "'>" . $grupo['nombreG'] . "</option>";
+                  }
+                }
+              ?>
             </select>
           </td>
         </tr>
@@ -65,11 +65,11 @@
           <td colspan='2' style="text-align: center;"><input type="submit" name="insertar" value="Guardar"></td>
         </tr>
         <?php
-                if (isset($_POST['insertar'])) {
-                    echo "<tr><td colspan='2'>" . insertarAlumno($conn, $_POST['idAlumno'], $_POST['idGrupo'], $_POST['nombre'], $_POST['apellido1'], $_POST['apellido2'], $_POST['expediente'], $_POST['telefono'], $_POST['mail']) . "</td></tr>";
-                }
-                cerrarConexion($conn);
-                ?>
+          if (isset($_POST['insertar'])) {
+            echo "<tr><td colspan='2'>" . insertarAlumno($conn, $_POST['idAlumno'], $_POST['idGrupo'], $_POST['nombre'], $_POST['apellido1'], $_POST['apellido2'], $_POST['expediente'], $_POST['telefono'], $_POST['mail']) . "</td></tr>";
+          }
+          cerrarConexion($conn);
+        ?>
       </table>
     </form>
   </div>
