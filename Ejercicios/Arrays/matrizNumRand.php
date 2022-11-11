@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matriz de numeros aleatorios</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matriz de numeros aleatorios</title>
 </head>
+
 <body>
-    <?php
+  <?php
     const FILAS = 6;
     const COLUMNAS = 9;
     for($i = 0; $i < FILAS*COLUMNAS; $i++){
@@ -58,4 +60,5 @@
     echo "</table>";
     ?>
 </body>
+
 </html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumnos</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumnos</title>
 </head>
 <?php
 // Función que ordena de menor a mayor edad los alumnos que se le pasan en un array bidimensional.
@@ -29,8 +30,9 @@ function ordenarAlumnos(array &$alumnos){
 
 }
 ?>
+
 <body>
-    <?php
+  <?php
     if(isset($_POST['numAlum'])){
         // Si se ha recibido la cantidad de alumnos en el formulario inicial,
         // se guarda dicha cantidad en la variable $numAlum.
@@ -80,13 +82,14 @@ function ordenarAlumnos(array &$alumnos){
     } else {
         // si no se ha recibido la cantidad de alumnos, muestra el formulario inicial.
         ?>
-        <form action="Ejercicio3.php" method="post">
-            <p>¿Cuántos alumnos va a añadir?</p>
-            <input type="number" name="numAlum">
-            <input type="submit" name="enviar" value="Enviar">
-        </form>
-        <?php
+  <form action="Ejercicio3.php" method="post">
+    <p>¿Cuántos alumnos va a añadir?</p>
+    <input type="number" name="numAlum">
+    <input type="submit" name="enviar" value="Enviar">
+  </form>
+  <?php
     }
     ?>
 </body>
+
 </html>

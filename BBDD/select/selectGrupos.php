@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de todos los grupos</title>
-    <script src="../js/funciones.js"></script>
-    <?php
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de todos los grupos</title>
+  <script src="../js/funciones.js"></script>
+  <?php
     require_once('../conexion.php');
     $conn = conectar();
     ?>
 </head>
+
 <body>
-    <table border=1>
-        <tr>
-            <th style="text-align: center;" colspan="7">Grupos</th>
-        </tr>
-        <tr style="text-align: center;">
-            <td>Identificador</td>
-            <td>Nombre</td>
-            <td>Curso</td>
-            <td>Alumnos</td>
-            <td>Profesores</td>
-            <td>Editar</td>
-            <td>Eliminar</td>
-        </tr>
-        <?php
+  <table border=1>
+    <tr>
+      <th style="text-align: center;" colspan="7">Grupos</th>
+    </tr>
+    <tr style="text-align: center;">
+      <td>Identificador</td>
+      <td>Nombre</td>
+      <td>Curso</td>
+      <td>Alumnos</td>
+      <td>Profesores</td>
+      <td>Editar</td>
+      <td>Eliminar</td>
+    </tr>
+    <?php
         $sql = "SELECT * FROM grupo";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
@@ -54,31 +56,33 @@
             }
         } else {
             ?>
-            <tr><td colspan="6">No hay resultados</td></tr>
-            <?php
+    <tr>
+      <td colspan="6">No hay resultados</td>
+    </tr>
+    <?php
         }
         ?>
-    </table>
-    <?php
+  </table>
+  <?php
     if(isset($_POST['alumnos'])){
         $sql2 = "SELECT nombreG FROM grupo WHERE idGrupo = ". $_POST['idGrupo'];
         $result = $conn->query($sql2);
         $grupo = $result->fetch_assoc()
     ?>
-    <table border=1>
-        <tr>
-            <th style="text-align: center;" colspan="7">Alumnos de <?=$grupo['nombreG']?></th>
-        </tr>
-        <tr>
-            <td>Identificador</td>
-            <td>Grupo</td>
-            <td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Expediente</td>
-            <td>Telefono</td>
-            <td>Mail</td>
-        </tr>
-        <?php
+  <table border=1>
+    <tr>
+      <th style="text-align: center;" colspan="7">Alumnos de <?=$grupo['nombreG']?></th>
+    </tr>
+    <tr>
+      <td>Identificador</td>
+      <td>Grupo</td>
+      <td>Nombre</td>
+      <td>Apellidos</td>
+      <td>Expediente</td>
+      <td>Telefono</td>
+      <td>Mail</td>
+    </tr>
+    <?php
         $sql = "SELECT * FROM alumno a JOIN grupo g ON g.idGrupo = a.idGrupo WHERE a.idGrupo = ". $_POST['idGrupo'];
         $result = $conn->query($sql);
         if($result->num_rows > 0){
@@ -95,33 +99,35 @@
             }
         } else {
             ?>
-            <tr><td colspan="7">No hay resultados</td></tr>
-            <?php
+    <tr>
+      <td colspan="7">No hay resultados</td>
+    </tr>
+    <?php
         }
 
         
         ?>
-    </table>
-    <?php
+  </table>
+  <?php
     }
     if(isset($_POST['profesores'])){
         $sql2 = "SELECT nombreG FROM grupo WHERE idGrupo = ". $_POST['idGrupo'];
         $result = $conn->query($sql2);
         $grupo = $result->fetch_assoc()
     ?>
-    <table border=1>
-        <tr>
-            <th style="text-align: center;" colspan="6">Profesores de <?=$grupo['nombreG']?></th>
-        </tr>
-        <tr>
-            <td>Identificador</td>
-            <td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Grupo</td>
-            <td>Telefono</td>
-            <td>Mail</td>
-        </tr>
-        <?php
+  <table border=1>
+    <tr>
+      <th style="text-align: center;" colspan="6">Profesores de <?=$grupo['nombreG']?></th>
+    </tr>
+    <tr>
+      <td>Identificador</td>
+      <td>Nombre</td>
+      <td>Apellidos</td>
+      <td>Grupo</td>
+      <td>Telefono</td>
+      <td>Mail</td>
+    </tr>
+    <?php
         $sql = "SELECT * FROM profesor p JOIN tutoria t ON p.idProfesor = t.idProfesor JOIN grupo g ON t.idGrupo = g.idGrupo WHERE t.idGrupo = ". $_POST['idGrupo'];
         $result = $conn->query($sql);
         if($result->num_rows > 0){
@@ -137,16 +143,19 @@
             }
         } else {
             ?>
-            <tr><td colspan="6">No hay resultados</td></tr>
-            <?php
+    <tr>
+      <td colspan="6">No hay resultados</td>
+    </tr>
+    <?php
         }
 
         
         ?>
-    </table>
-    <?php
+  </table>
+  <?php
     }
     cerrarConexion($conn);
     ?>
 </body>
+
 </html>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alturas</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alturas</title>
 </head>
+
 <body>
-    <?php
+  <?php
     if(isset($_POST['numPers'])){
         $numPers = $_POST['numPers'];
         if(isset($_POST['nombre0'])){
@@ -41,13 +43,14 @@
         }
     } else {
         ?>
-        <form action="alturasv2.php" method="post">
-            <p>¿Cuántas personas va a añadir?</p>
-            <input type="number" name="numPers">
-            <input type="submit" value="Enviar">
-        </form>
-        <?php
+  <form action="alturasv2.php" method="post">
+    <p>¿Cuántas personas va a añadir?</p>
+    <input type="number" name="numPers">
+    <input type="submit" value="Enviar">
+  </form>
+  <?php
     }
     ?>
 </body>
+
 </html>

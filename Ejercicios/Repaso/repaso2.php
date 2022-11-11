@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehículos</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehículos</title>
 </head>
+
 <body>
-    <?php
+  <?php
     /* Almacena en un array bidimensional la matrícula, marca y modelo
     de tantos vehículos como el usuario quiera introducir mediante un formulario. 
     Recorre el array y muestra por pantalla la información en una tabla. */
@@ -79,13 +81,14 @@
     } else {
         // Formulario inicial dónde se le pregunta al usuario la cantidad de vehículos que va a introducir.
         ?>
-        <form action="repaso2.php" method="post">
-            <p>¿Cuántos vehículos va a introducir?</p>
-            <input type="number" name="cantidad">
-            <input type="submit" value="Enviar">
-        </form>
-        <?php
+  <form action="repaso2.php" method="post">
+    <p>¿Cuántos vehículos va a introducir?</p>
+    <input type="number" name="cantidad">
+    <input type="submit" value="Enviar">
+  </form>
+  <?php
     }
     ?>
 </body>
+
 </html>

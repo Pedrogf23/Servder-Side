@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ordenar números</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordenar números</title>
 </head>
+
 <body>
-    <?php
+  <?php
     /* Realiza una función que que recibe por argumento una serie de valores
     y devuelve un array con los valores ordenados de mayor a menor. */
 
@@ -95,4 +97,5 @@
 
     ?>
 </body>
+
 </html>
