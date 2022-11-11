@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alturas</title>
-    <style>
-        #bajo td{
-            background-color: #5a07a8;
-            color: white;
-        }
-        #alto td {
-            background-color: #eff53b;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alturas</title>
+  <style>
+  #bajo td {
+    background-color: #5a07a8;
+    color: white;
+  }
+
+  #alto td {
+    background-color: #eff53b;
+  }
+  </style>
 </head>
+
 <body>
-    <?php
+  <?php
     if(isset($_POST['numPers'])){
 
         $numPers = $_POST['numPers'];
@@ -82,14 +85,15 @@
     } else {
         ?>
 
-        <form action="alturasv3.php" method="post">
-            <p>¿Cuántas personas va a añadir?</p>
-            <input type="number" name="numPers">
-            <input type="submit" value="Enviar">
-        </form>
+  <form action="alturasv3.php" method="post">
+    <p>¿Cuántas personas va a añadir?</p>
+    <input type="number" name="numPers">
+    <input type="submit" value="Enviar">
+  </form>
 
-        <?php
+  <?php
     }
     ?>
 </body>
+
 </html>

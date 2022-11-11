@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de todos los profesores</title>
-    <script src="../js/funciones.js"></script>
-    <?php
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de todos los profesores</title>
+  <script src="../js/funciones.js"></script>
+  <?php
     include_once('../conexion.php');
     $conn = conectar();
     ?>
 </head>
+
 <body>
-    <table border=1>
-        <tr>
-            <th style="text-align: center;" colspan="7">Profesores</th>
-        </tr>
-        <tr  style="text-align: center;" >
-            <td>Identificador</td>
-            <td>Nombre</td>
-            <td>Apellidos</td>
-            <td>Telefono</td>
-            <td>Mail</td>
-            <td>Editar</td>
-            <td>Eliminar</td>
-        </tr>
-        <?php
+  <table border=1>
+    <tr>
+      <th style="text-align: center;" colspan="7">Profesores</th>
+    </tr>
+    <tr style="text-align: center;">
+      <td>Identificador</td>
+      <td>Nombre</td>
+      <td>Apellidos</td>
+      <td>Telefono</td>
+      <td>Mail</td>
+      <td>Editar</td>
+      <td>Eliminar</td>
+    </tr>
+    <?php
         $sql = "SELECT * FROM profesor";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
@@ -42,11 +44,14 @@
             }
         } else {
             ?>
-            <tr><td colspan="6">No hay resultados</td></tr>
-            <?php
+    <tr>
+      <td colspan="6">No hay resultados</td>
+    </tr>
+    <?php
         }
         cerrarConexion($conn);        
         ?>
-    </table>
+  </table>
 </body>
+
 </html>
