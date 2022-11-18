@@ -21,7 +21,7 @@ class Empleado {
 
 }
 
-$miEmpleado = new Empleado();
+$miEmpleado = new Empleado('Pedro', 'González', 'Fernández');
 
 $miEmpleado->nombre = "Pedro";
 $miEmpleado->apellido1 = "González";

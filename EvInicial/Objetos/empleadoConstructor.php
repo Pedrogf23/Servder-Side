@@ -29,7 +29,7 @@ class Empleado {
 
 }
 
-$miEmpleado = new Empleado();
+$miEmpleado = new Empleado('Pedro', 'González', 'Fernández');
 
 $miEmpleado->EmpleadoConstructor("Pedro", "González", "Fernández", 4000);
 
