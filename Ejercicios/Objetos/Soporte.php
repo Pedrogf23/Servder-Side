@@ -22,7 +22,7 @@ class Soporte{
     return $this->precio + ($this->precio * (self::IVA / 100));
   }
 
-  public function Numero(){
+  public function getNumero(){
     return $this->numero;
   }
 
