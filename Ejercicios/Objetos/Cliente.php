@@ -75,7 +75,12 @@ class Cliente{
   }
 
   public function listarAlquileres(): void{
-    echo $this->nombre .'tiene '. count($this->soportesAlquilados) .' soportes alquilados. <br>';
+    echo '<strong>'.$this->nombre .' tiene '. count($this->soportesAlquilados) .' soportes alquilados: <br></strong>';
+    foreach($this->soportesAlquilados as $Soporte){
+      echo '<br>';
+      echo get_class($Soporte).':<br>';
+      echo $Soporte->muestraResumen();
+    }
   }
 
   public function muestraResumen(){
