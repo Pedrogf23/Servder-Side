@@ -4,14 +4,26 @@ declare(strict_types=1);
 
 class Soporte{
   public string $titulo;
-  protected string $numero;
+  protected int $numero;
   private float $precio;
   private const IVA = 21;
+  private static int $totalSoportes = 0;
+  private bool $alquilado = false;
 
-  public function __construct(string $titulo, string $numero, float $precio){
+  public function __construct(string $titulo, float $precio){
     $this->titulo = $titulo;
-    $this->numero = $numero;
     $this->precio = $precio;
+    $this->numero = self::$totalSoportes;
+    self::$totalSoportes++;
+  }
+
+
+  public function isAlquilado(){
+    return $this->alquilado;
+  }
+
+  public function setAlquilado(bool $b){
+    $this->alquilado = $b;
   }
 
   public function getPrecio(){

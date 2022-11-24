@@ -8,14 +8,16 @@ class Cliente{
 
   public string $nombre;
   private int $numero;
+  private static int $totalClientes = 0;
   private array $soportesAlquilados = array();
   private int $numSoportesAlquilados = 0;
   private int $maxAlquilerConcurrente;
 
-  public function __construct(string $nombre, int $numero, int $maxAlquilerConcurrente = 3){
+  public function __construct(string $nombre, int $maxAlquilerConcurrente = 3){
     $this->nombre = $nombre;
-    $this->numero = $numero;
     $this->maxAlquilerConcurrente = $maxAlquilerConcurrente;
+    $this->numero = self::$totalClientes;
+    self::$totalClientes++;
   }
 
   public function getNumero(){
@@ -45,6 +47,7 @@ class Cliente{
       if($this->getNumSoportesAlquilados() < $this->maxAlquilerConcurrente){
         array_push($this->soportesAlquilados, $s);
         $this->numSoportesAlquilados++;
+        $s->setAlquilado(true);
         echo 'Soporte alquilado correctamente.<br>';
         return true;
       } else {
@@ -68,6 +71,7 @@ class Cliente{
       }
   
       if($this->soportesAlquilados[count($this->soportesAlquilados)-1]->getNumero() == $numSoporte){
+        $this->soportesAlquilados[count($this->soportesAlquilados)-1]->setAlquilado(false);
         array_pop($this->soportesAlquilados);
         echo 'Soporte devuelto correctamente. <br>';
         $this->numSoportesAlquilados--;

@@ -8,8 +8,8 @@ class CintaVideo extends Soporte{
 
   private int $duracion;
 
-  public function __construct(string $titulo, string $numero, float $precio, int $duracion){
-    parent::__construct($titulo, $numero, $precio);
+  public function __construct(string $titulo, float $precio, int $duracion){
+    parent::__construct($titulo, $precio);
     $this->duracion = $duracion;
   }
 

@@ -10,8 +10,8 @@ class Juego extends Soporte{
   private int $minNumJugadores;
   private int $maxNumJugadores;
 
-  public function __construct(string $titulo, string $numero, float $precio, string $consola, int $minNumJugadores, int $maxNumJugadores){
-    parent::__construct( $titulo,  $numero,  $precio);
+  public function __construct(string $titulo, float $precio, string $consola, int $minNumJugadores, int $maxNumJugadores){
+    parent::__construct($titulo, $precio);
     $this->consola = $consola;
     $this->minNumJugadores = $minNumJugadores;
     $this->maxNumJugadores = $maxNumJugadores;
