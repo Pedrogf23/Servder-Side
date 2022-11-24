@@ -55,21 +55,27 @@ class Cliente{
   }
 
   public function devolver(int $numSoporte): bool{
-    for($i = 0; $i < $this->numSoportesAlquilados - 1; $i++){
-      if($this->soportesAlquilados[$i]->getNumero() == $numSoporte){
-        $Soporte = $this->soportesAlquilados[$i];
-        $this->soportesAlquilados[$i] = $this->soportesAlquilados[$i+1];
-        $this->soportesAlquilados[$i+1] = $Soporte;
-      }
-    }
-
-    if($this->soportesAlquilados[count($this->soportesAlquilados)-1]->getNumero() == $numSoporte){
-      array_pop($this->soportesAlquilados);
-      echo 'Soporte devuelto correctamente. <br>';
-      return true;
-    } else {
-      echo 'No tiene alquilado un soporte con ese número. <br>';
+    if($this->numSoportesAlquilados == 0){
+      echo 'No tiene ningún soporte alquilado. <br>';
       return false;
+    } else {
+      for($i = 0; $i < $this->numSoportesAlquilados - 1; $i++){
+        if($this->soportesAlquilados[$i]->getNumero() == $numSoporte){
+          $Soporte = $this->soportesAlquilados[$i];
+          $this->soportesAlquilados[$i] = $this->soportesAlquilados[$i+1];
+          $this->soportesAlquilados[$i+1] = $Soporte;
+        }
+      }
+  
+      if($this->soportesAlquilados[count($this->soportesAlquilados)-1]->getNumero() == $numSoporte){
+        array_pop($this->soportesAlquilados);
+        echo 'Soporte devuelto correctamente. <br>';
+        $this->numSoportesAlquilados--;
+        return true;
+      } else {
+        echo 'No tiene alquilado un soporte con ese número. <br>';
+        return false;
+      }
     }
 
   }
