@@ -57,6 +57,7 @@ class VideoClub{
   }
 
   public function alquilarSocioProducto(int $numCliente, int $numSoporte): bool{
+    $alquilado = false;
     foreach($this->socios as $socio){
       if($socio->getNumero() == $numCliente){
         foreach($this->productos as $producto){
@@ -70,6 +71,10 @@ class VideoClub{
           }
         }
       }
+    }
+    if(!$alquilado){
+      echo "Ese socio o producto no existe.<br>";
+      return false;
     }
   }
 
