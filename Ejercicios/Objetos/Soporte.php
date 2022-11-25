@@ -39,7 +39,7 @@ class Soporte{
   }
 
   public function muestraResumen(){
-    echo 'Titulo: '.$this->titulo .'</br>Precio: '. $this->precio . '€ (IVA no incluido)</br>';
+    echo get_class($this).':<br>Titulo: '.$this->titulo .'</br>Precio: '. $this->precio . '€ (IVA no incluido)</br>';
   }
 
 }

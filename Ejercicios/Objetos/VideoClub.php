@@ -36,8 +36,8 @@ class VideoClub{
     return $this->incluirProducto(new Juego($titulo, $precio, $consola, $minNumJugadores, $maxNumJugadores));
   }
 
-  public function incluirSocio(string $nombre, int $maxAlquilerConcurrente = 3){
-    array_push($this->socios, new Cliente($nombre, $maxAlquilerConcurrente = 3));
+  public function incluirSocio(string $nombre, int $maxAlquilerConcurrente=3){
+    array_push($this->socios, new Cliente($nombre, $maxAlquilerConcurrente));
     $this->numSocios++;
     return true;
   }
@@ -63,6 +63,11 @@ class VideoClub{
         foreach($this->productos as $producto){
           if($producto->getNumero() == $numSoporte){
             if($producto->isAlquilado()){
+              if($socio->tieneAlquilado($producto)){
+                echo "Ya tienes alquilado ese producto.<br>";
+              } else {
+                echo "Ese producto ya ha sido alquilado por otro socio.<br>";
+              }
               return false;
             } else {
               $socio->alquilar($producto);

@@ -22,7 +22,7 @@ $vc->alquilarSocioProducto(1, 3);
 
 echo '<br>';
 
-$vc->alquilarSocioProducto(1, 2);
+$vc->alquilarSocioProducto(0, 2);
 
 echo '<br>';
 
