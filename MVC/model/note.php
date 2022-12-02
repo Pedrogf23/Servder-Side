@@ -49,12 +49,15 @@ class NoteTable{
   private $conection;
   private array $listNotes = array();
 
+  // Métodos. 
+  
+  // Inicializar la conexión con la bbdd.
   public function getConection(){
     $conn = new DB();
     $this->conection = $conn->getConection();
   }
 
-  // Métodos. 
+  // Accede la base de datos y mete en $this->listNotes las notas que haya en la bbdd.
   public function getNotes(){
     $this->getConection();
     $sql = "SELECT * FROM $this->table";

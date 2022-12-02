@@ -7,6 +7,6 @@ define("DB_USER", "root");
 define("DB_PASSWD", "");
 
 // Acción por defecto para el index si no le llega nada.
-define('DEFAULT_ACTION', 'list');
+define("DEFAULT_ACTION", "list");
 
 ?>
