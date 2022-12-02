@@ -7,7 +7,7 @@ include_once 'controller/note.php';
 
 if(!isset($_GET['action'])) $_GET['action'] = constant("DEFAULT_ACTION");
 
-$controlador = noteController():
+//$controlador = noteController();
 
 $dataToView = array();
 $dataToView = $controlador->{$_GET["action"]}();
