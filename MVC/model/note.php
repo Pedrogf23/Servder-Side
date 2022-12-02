@@ -86,6 +86,7 @@ class NoteTable{
   public function insertNote(){
     //devolver objeto nota
     $id = $this->conection->insert_id; // Devuelve el último id generado.
+    
   }
 
   public function updateNote(){
