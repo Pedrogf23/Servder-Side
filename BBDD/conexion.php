@@ -9,7 +9,7 @@ function conectar(){
 
     $mysqli = new mysqli($server, $user, $pass, $db_name);
     if($mysqli->connect_errno){
-        echo 'Fallo al conectar a MySQL: ('. $mysqli->connnect_errno() .')'. $mysqli->connect_error();
+        echo 'Fallo al conectar a MySQL: ('. $mysqli->connnect_errno .')'. $mysqli->connect_error;
     }
     return $mysqli;
 }

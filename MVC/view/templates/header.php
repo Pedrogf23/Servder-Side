@@ -9,7 +9,3 @@
 </head>
 
 <body>
-
-</body>
-
-</html>
