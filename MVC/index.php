@@ -14,7 +14,7 @@ $dataToView = $controlador->{$_GET["action"]}();
 
 /* Includes */
 include_once 'view/templates/header.php';
-include_once 'view/'. $controlador->view .'.php';
+include_once 'view/'.$controlador->view.'.php';
 include_once 'view/templates/footer.php';
 
 ?>
