@@ -5,14 +5,14 @@ include_once 'config/config.php';
 // Clase que se conecta con la Base de Datos.
 class DB{
 
-  // Atributos.
+  /* Atributos */
   private string $servername; // Servidor.
   private string $dbname; // Base de Datos.
   private string $username; // Usuario.
   private string $passwd; // Contraseña.
   private $conection; // Conexión.
 
-  // Constructor.
+  /* Constructor */
   public function __construct(){
     // Se inicializan los valores de la conexión mediante las constantes creadas en config.php.
     $this->servername = constant("DB_HOST");
@@ -27,6 +27,8 @@ class DB{
     }
     
   }
+
+  /* Métodos */
 
   // Devuelve la conexión.
   public function getConection(){
