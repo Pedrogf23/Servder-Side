@@ -37,7 +37,7 @@ div.listNotes {
 }
 div.note {
   float: left;
-  width: 338px;
+  width: 21%;
   max-height: 338px;
   overflow-wrap: break-word;
   overflow: hidden;
