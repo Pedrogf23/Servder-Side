@@ -1,22 +1,16 @@
 <?php
 
 if(!isset($_COOKIE['visitas'])){
-
+  $visitas = 1;
+  setcookie('visitas', $visitas);
 } else {
-  if(isset($_POST['del'])){
-    $visitas = 1;
-    setcookie('visitas', $visitas);
-    unset($_POST['del']);
-  } else {
-    $visitas = $_COOKIE['visitas'];
-    setcookie('visitas', ++$visitas);
-  }
+  $visitas = $_COOKIE['visitas'];
+  setcookie('visitas', ++$visitas);
 }
 
 echo 'Esta es tu '. $visitas .'ª visita';
 
 ?>
-<form action="#" method="post">
-  <input type="hidden" name="del" value="1">
+<form action="resetCount.php" method="post">
   <input type="submit" value="Reiniciar">
 </form>
